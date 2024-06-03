@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Guide App</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      .login-container,
+      .search-container {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-container" id="login-container">
+        <h2>Login</h2>
+        <input
+          type="text"
+          placeholder="Enter username"
+          id="username"
+        /><br><br>
+        <input
+          type="password"
+          placeholder="Enter password"
+          id="password"
+        /><br><br>
+        <button id="login-btn">Login</button>
+      </div>
+      <div class="search-container" id="search-container">
+        <h2>Movie Guide App</h2>
+        <input
+          type="text"
+          placeholder="Enter movie name here..."
+          id="movie-name"
+          value="dark knight"
+        />
+        <button id="search-btn">Search</button>
+        <div id="result"></div>
+      </div>
+    </div>
+    <script>
+      // Sample username and password
+      const validUsername = "user123";
+      const validPassword = "password123";
+
+      // Function to handle login
+      document.getElementById("login-btn").addEventListener("click", function() {
+        const enteredUsername = document.getElementById("username").value;
+        const enteredPassword = document.getElementById("password").value;
+
+        if (enteredUsername === validUsername && enteredPassword === validPassword) {
+          alert("Login successful!");
+          document.getElementById("login-container").style.display = "none";
+          document.getElementById("search-container").style.display = "block";
+        } else {
+          alert("Invalid username or password");
+        }
+      });
+
+      // Show login container initially
+      document.getElementById("login-container").style.display = "block";
+    </script>
+    <script src="key.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
